@@ -1,0 +1,16 @@
+{% set intro = g.site_intro_text %}
+
+{% set intro = g.site_intro_text %}
+
+<div class="">
+    {% if intro %}
+    {{ h.render_markdown(intro) }}
+    {% else %}
+    <h1 class="page-heading">{{ _("Welcome") }}</h1>
+    <p align="justify">
+        {% trans %}
+        O Portal de Dados Abertos da cidade do Porto foi criado para conceder a todos, de forma livre, gratuita e imediata, o acesso e disponibilização a inúmeros e diversos conjuntos de dados da cidade, com vista a aumentar o conhecimento e o envolvimento dos cidadãos e potenciar o desenvolvimento futuro. Navegue neste Portal, conheça melhor os dados desta cidade, escrutine o seu funcionamento, utilize-os na criação de novos serviços e oportunidades de negócio e na investigação & desenvolvimento. Acreditamos que com a disponibilização destes conjuntos de dados abertos, em contínua atualização, o Município do Porto será uma cidade cada vez mais inteligente e inovadora.
+        {% endtrans %}
+    </p>
+    {% endif %}
+</div>

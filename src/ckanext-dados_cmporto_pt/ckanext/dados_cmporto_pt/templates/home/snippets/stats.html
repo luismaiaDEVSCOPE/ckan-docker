@@ -1,0 +1,48 @@
+{#
+PX: removed the stats about groups if the admin is not logged-in
+#}
+{% set stats = h.get_site_statistics() %}
+
+<div class="box stats">
+  <div class="inner">
+    <h3>{{ _('Estatísticas') }}</h3>
+    <ul>
+      {% block stats_group %}
+      <div class="row">
+        <div class="col-md-4 stat">
+          <div >
+            <a href="{{ h.url_for('dataset.search') }}">
+              <b>{{ h.SI_number_span(h.get_total_datasets()) }}</b><br>
+              <strong>{{ 'Conjunto de Dados' if h.get_total_datasets() == 1 else 'Conjuntos de Dados' }}</strong>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 stat">
+          <div>
+            <a href="{{ h.url_for('dataset.search') }}">
+              <b>{{ h.SI_number_span(h.get_total_resources()) }}</b><br>
+              <strong>{{ _('Resource') if h.get_total_resources() == 1 else _('Resources') }}<strong>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 stat">
+          <div>
+            <a href="{{ h.url_for('dataset.search') }}?tags">
+              <b>{{ h.SI_number_span(h.get_total_tags()) }}</b><br>
+              <strong>{{ _('Tag') if h.get_total_tags() == 1 else _('Tags') }}<strong>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 stat" style="border: none;">
+          <div>
+            <a href="{{ h.url_for(controller='organization', action='index') }}">
+              <b>{{ h.SI_number_span(stats.organization_count) }}</b><br>
+              <strong>{{ _('Organization') if stats.organization_count == 1 else _('Organizations') }}</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="box">
+	<div class="inner">
+		<h3>{{'Termos em destaque'}}</h3>
+		<div id="tag_cloud" class="wordcloud">
+			{% for _tag in top_tags %}
+			<a href="{{datasets_url}}/dataset/?tags={{_tag}}">{{ _tag }}</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>

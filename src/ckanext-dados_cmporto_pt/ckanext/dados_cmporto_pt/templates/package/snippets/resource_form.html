@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block basic_fields_url %}
+{{ super() }}
+
+  {{ form.input('resource_url', label=_('Source'), id='field-resource_url', placeholder=_('resource url'), value=data.resource_url, error=errors.resource_url, classes=['control-medium']) }}
+{% endblock %}

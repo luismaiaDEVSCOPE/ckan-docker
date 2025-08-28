@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: ckanext-dados_cmporto_pt
+Version: 0.1.0
+Summary: Dados Abertos CM Porto theme for CKAN 2.11
+Home-page: https://github.com/ParadigmaXis/ckanext-dados_cmporto_pt
+Author: ParadigmaXis
+Author-email: mail@ParadigmaXis.pt
+License: AGPL
+Keywords: CKAN dados porto portugal theme
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: summary
+
+Custom theme extension for Dados Abertos CM Porto CKAN 2.11

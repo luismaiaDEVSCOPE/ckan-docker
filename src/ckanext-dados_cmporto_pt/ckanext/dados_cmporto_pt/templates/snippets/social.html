@@ -1,0 +1,13 @@
+{% set current_url = h.full_current_url() %}
+{% block social %}
+  <section class="module module-narrow social">
+    {% block social_title %}
+      <h2 class="module-heading"><i class="fa fa-share-square-o"></i> {{ _('Social') }}</h2>
+    {% endblock %}
+    {% block social_nav %}
+      <ul class="nav nav-simple">
+        <li class="nav-item"><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ current_url }}" target="_blank"><img src="{{h.url_for_static('/img/linkedin-brands.svg')}}" alt="in" width="12" height="12"></img> Linkedin</a></li>
+      </ul>
+    {% endblock %}
+  </section>
+{% endblock %}

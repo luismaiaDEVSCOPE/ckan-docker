@@ -1,0 +1,32 @@
+<svg id="Layer_1"
+   	data-name="Layer 1"
+   	xmlns="http://www.w3.org/2000/svg"
+   	viewBox="0 0 128 145">
+	<defs>
+		<style>.cls-1{fill:#000f9f;}.cls-2,.cls-8{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:3.61px;}.cls-3{font-size:13px;fill:#fff;font-family:HelveticaNeue-Medium, Helvetica Neue,sans-serif;font-weight:500;}.cls-4{letter-spacing:0.01em;}.cls-5{letter-spacing:0.01em;}.cls-6{letter-spacing:0.01em;}.cls-7{letter-spacing:0.01em;}.cls-8{stroke-linecap:square;}</style>
+	</defs>
+	<rect class="cls-1"
+    		x="-141"
+    		y="-164"
+    		width="819"
+    		height="322"/>
+	<circle class="cls-2"
+      		cx="64.56"
+      		cy="53.22"
+      		r="50.99"/>
+	<text class="cls-3"
+    		transform="translate(28 123.5)">
+		<tspan class="cls-4">Mobilidade e</tspan>
+	</text>
+	<text class="cls-3"
+    		transform="translate(20 138.71)">
+		<tspan class="cls-5">Infraestruturas</tspan>
+	</text>
+	<path class="cls-8"
+    		d="M35.21,38.55H93.9M35.21,67.9s0-29.35,29.35-29.35S93.9,67.9,93.9,67.9"/>
+	<line class="cls-2"
+    		x1="35.21"
+    		y1="60.56"
+    		x2="93.9"
+    		y2="60.56"/>
+</svg>

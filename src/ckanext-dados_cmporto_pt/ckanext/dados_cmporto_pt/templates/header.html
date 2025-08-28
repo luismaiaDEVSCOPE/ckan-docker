@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% block header_logo %}
+  <a class="logo" href="{{ h.url('home') }}"><img src="/img/Logo-Porto.png" alt="{{ g.site_title }}" title="Dados Abertos" /></a>
+  <div class="main-heading">
+    <h1><a href="{{ h.url('home') }}">{{ g.site_title }}</a></h1>
+    {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+  </div>
+{% endblock %}
+
+{% block header_site_search %}{% endblock %}
+
+{% block header_site_navigation_tabs %}
+
+    {% set items = [('search', _('Datasets'))] %}
+    {% if h.is_dcat_plugin_active() %}
+        {% set items = items + [('linked_data', _('Linked Data'))] %}
+    {% endif %}
+    {% set items = items + [('organizations_index', _('Organizations'))] %}
+    {% set items = items + [('group_index', _('Groups'))] %}
+    {% set items = items + [('about', _('About'))] %}
+    {{ h.build_nav_main(*items) }}
+
+{% endblock %}
+
+{{ super() }}
+

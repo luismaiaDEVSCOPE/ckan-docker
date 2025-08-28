@@ -1,0 +1,144 @@
+{% import 'macros/form.html' as form %}
+
+{%- set options=[] -%}
+{%- set form_restrict_choices_to=field.get('form_restrict_choices_to') -%}
+{%- if not h.scheming_field_required(field) or
+    field.get('form_include_blank_choice', false) -%}
+  {%- do options.append({'value': '', 'text': ''}) -%}
+{%- endif -%}
+{%- for c in h.scheming_field_choices(field) -%}
+  {%- if not form_restrict_choices_to or c.value in form_restrict_choices_to -%}
+    {%- do options.append({
+      'value': c.value|string,
+      'text': h.scheming_language_text(c.label) }) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if field.get('sorted_choices') -%}
+  {%- set options = options|sort(case_sensitive=false, attribute='text') -%}
+{%- endif -%}
+{%- if data[field.field_name] -%}
+  {%- set option_selected = data[field.field_name]|string -%}
+{%- else -%}
+  {%- set option_selected = None -%}
+{%- endif -%}
+
+
+{% call form.select(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    options=options,
+    selected=option_selected,
+    error=errors[field.field_name],
+    classes=['form-group', 'control-medium'],
+    attrs=dict({"class": ""}, **(field.get('form_select_attrs', {'data-module':'autocomplete'}))),
+    is_required=h.scheming_field_required(field)
+    )
+%}
+    {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
+{% endcall %}
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var selectUser = $('#field-author').val(); 
+
+        // If provider exists show provider_info element
+        function updateProviderInfoVisibility() {
+
+            existProvider = $('#field-provider').val();
+            
+            if (existProvider === 'yes') {
+                $('div[data-field="provider_info"]').show();
+                $('a[name="repeating-add"]').show();
+                $('label[for="field-provider_info"]').show();
+                $('label[for="field-provider_info"]').parent().show();
+
+                // Make sure to Show Provider Name if Provider is other
+                $('div[data-field="provider_info"]').each(function() {
+                    var providerOptionsValue = $(this).find('select[name*="provider_options"]').val();
+
+                    // Show/hide provider_name based on provider_options value
+                    if (providerOptionsValue === 'other') {
+                        $(this).find('input[name*="provider_name"]').show();
+                        $(this).find('label[for*="provider_name"]').show();
+                        $(this).find('input[name*="provider_name"]').parent().show();
+                    }
+                    else {
+                        $(this).find('input[name*="provider_name"]').hide();
+                        $(this).find('label[for*="provider_name"]').hide();
+                        $(this).find('input[name*="provider_name"]').parent().hide();
+                        $(this).find('input[name*="provider_name"]').val('');
+                    }
+                });
+            }
+            else {
+                $('div[data-field="provider_info"]').hide();
+                $('a[name="repeating-add"]').hide();
+                $('label[for="field-provider_info"]').hide();
+                $('label[for="field-provider_info"]').parent().hide();
+            }
+        }
+
+        // Function to update the author variable
+        function updateAuthorInfoVisibility() {
+            selectUser = $('#field-author').val(); 
+
+            // Check the selected author value and hide/show the other fields
+            if (selectUser !== 'other') {
+                $('label[for="field-author_name"]').hide();
+                $('label[for="field-author_name"]').parent().hide();
+                $('#field-author_name').hide();
+                $('#field-author_name').parent().hide();
+                $('#field-author_name').val('');
+            } 
+            else {
+                $('label[for="field-author_name"]').show();
+                $('label[for="field-author_name"]').parent().show();
+                $('#field-author_name').show();
+                $('#field-author_name').parent().show();
+            }
+        }
+
+        function updateTutorInfoVisibility() {
+            selectUser = $('#field-tutor').val(); 
+
+            // Check the selected author value and hide/show the other fields
+            if (selectUser !== 'other') {
+                $('label[for="field-tutor_name"]').hide();
+                $('label[for="field-tutor_name"]').parent().hide();
+                $('#field-tutor_name').hide();
+                $('#field-tutor_name').parent().hide();
+                $('#field-tutor_name').val('');
+            } 
+            else {
+                $('label[for="field-tutor_name"]').show();
+                $('label[for="field-tutor_name"]').parent().show();
+                $('#field-tutor_name').show();
+                $('#field-tutor_name').parent().show();
+            }
+        }
+        
+        // Initial check and set visibility
+        updateAuthorInfoVisibility();
+        updateProviderInfoVisibility();
+        updateTutorInfoVisibility();
+
+        // Listen for changes on author select and call the funtion
+        $('#field-author').on('change', function() {
+            updateAuthorInfoVisibility();
+        });
+
+        $('#field-tutor').on('change', function() {
+            updateTutorInfoVisibility();
+        });
+        // Listen for changes in the provider and call the function
+        $('#field-provider').on('change', function() {
+            updateProviderInfoVisibility();
+        });
+        // Listen for changes in the provider_options select fields inside provider_info
+        $(document).on('change', 'select[name*="provider_options"]', function() {
+            updateProviderInfoVisibility();
+        });
+    });
+</script>

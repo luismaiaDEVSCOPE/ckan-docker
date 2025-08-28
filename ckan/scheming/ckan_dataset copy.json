@@ -1,0 +1,2608 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about": "A reimplementation of the default CKAN dataset schema",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "form_placeholder": "eg. A descriptive title",
+      "required": true
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data",
+      "required": true
+    },
+    {
+      "field_name": "vocab_category",
+      "label": "Category",
+      "preset": "multiple_checkbox",
+      "required": true,
+      "choices": [
+        {
+          "value": "Administração Pública e Serviços",
+          "label": "Administração Pública e Serviços"
+        },
+        {
+          "value": "Ambiente",
+          "label": "Ambiente"
+        },
+        {
+          "value": "Economia",
+          "label": "Economia"
+        },
+        {
+          "value": "Informação de Base",
+          "label": "Informação de Base"
+        },
+        {
+          "value": "Cultura e Lazer",
+          "label": "Cultura e Lazer"
+        },
+        {
+          "value": "Desporto",
+          "label": "Desporto"
+        },
+        {
+          "value": "Educação e Ciência",
+          "label": "Educação e Ciência"
+        },
+        {
+          "value": "Mobilidade e Infraestruturas",
+          "label": "Mobilidade e Infraestruturas"
+       	},
+         {
+          "value": "Proteção Civil e Segurança",
+          "label": "Proteção Civil e Segurança"
+        },
+        {
+          "value": "Saúde e Ação Social",
+          "label": "Saúde e Ação Social"
+        },
+        {
+          "value": "Sociedade",
+          "label": "Sociedade"
+       	},
+       	{
+          "value": "Urbanismo e Edificado",
+          "label": "Urbanismo e Edificado"
+        }
+      ]
+    },
+    {
+      "field_name": "dataset_type",
+      "label": "Dataset Type",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": true,
+      "choices": [
+        {
+          "value": "complex_dataset",
+          "label": "Complex Dataset"
+        },
+        {
+          "value": "simple_dataset",
+          "label": "Simple Dataset"
+        }
+      ]
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "group_added_to",
+      "label": "Group",
+      "preset": "groups_validator"
+    },
+    {
+      "field_name": "author",
+      "label": "Author",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator",
+      "preset": "users_validator",
+      "form_include_blank_choice": true,
+      "required": true,
+      "choices": [
+        {
+          "value": "direcao-municipal-da-presidencia",
+          "label": "Direção Municipal da Presidência"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-relacoes-internacionais-e-de-protocolo",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Relações Internacionais e de Protocolo"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/divisao-municipal-de-producao-de-conteudos",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Divisão Municipal de Produção de Conteúdos"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/gabinete-de-gestao-da-marca",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Gabinete de Gestão da Marca"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-auditoria-interna",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Auditoria Interna"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-camara-municipal",
+          "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Câmara Municipal"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-assembleia-municipal",
+          "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Assembleia Municipal"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/gabinete-de-apoio-ao-provedor-do-municipe",
+          "label": "Direção Municipal da Presidência / Gabinete de Apoio ao Provedor do Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio",
+          "label": "Direção Municipal de Cultura e Património"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas",
+          "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas/gabinete-de-apoio-as-bibliotecas-e-a-leitura",
+          "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas / Gabinete de Apoio às Bibliotecas e à Leitura"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-arquivo-historico",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Arquivo Histórico"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-museus",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Museus"
+        },
+        {
+          "value": "policia-municipal",
+          "label": "Polícia Municipal"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes",
+          "label": "Polícia Municipal / Departamento Municipal de Operações"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-apoio-geral",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Apoio Geral"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-policial",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal Policial"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-transito",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Trânsito"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-seguranca-e-infraestruturas",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Segurança e Infraestruturas"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-secretaria-geral",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Secretaria Geral"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-atendimento",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Atendimento"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-arquivo-geral",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Arquivo Geral"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-gestao-da-informacao",
+          "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Gestão da Informação"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-operacao-do-cgi",
+          "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Operação do CGI"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/gabinete-de-novos-servicos-ao-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe / Gabinete de Novos Serviços ao Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao",
+          "label": "Direção Municipal de Sistemas de Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-gestao-de-aplicacoes-e-informacao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Gestão de Aplicações e Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-sistemas-e-comunicacoes",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Sistemas e Comunicações"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-suporte-e-manutencao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Suporte e Manutenção"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-recrutamento-e-selecao",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Recrutamento e Seleção"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-gestao-e-remuneracoes",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Gestão e Remunerações"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-seguranca-e-saude-no-trabalho",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Segurança e Saúde no Trabalho"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-socioprofissional",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Socioprofissional"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-formacao-e-desenvolvimento",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Formação e Desenvolvimento"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-integrada",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Integrada"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos",
+          "label": "Direção Municipal de Serviços Jurídicos"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-assessoria-e-de-gestao-da-producao-juridica",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Assessoria e de Gestão da Produção Jurídica"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-execucoes-fiscais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Execuções Fiscais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-rodoviarias",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Rodoviárias"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-gerais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Gerais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-juridico-a-contratacao-e-as-empresas-municipais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio Jurídico à Contratação e às Empresas Municipais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-a-gestao-de-contratos",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio à Gestão de Contratos"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil",
+          "label": "Serviço Municipal de Proteção Civil"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/divisao-municipal-de-planeamento-e-monitorizacao-de-risco",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Divisão Municipal de Planeamento e Monitorização de Risco"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/gabinete-de-operacoes-e-mitigacao-de-risco",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Gabinete de Operações e Mitigação de Risco"
+        },
+        {
+          "value": "regimento-sapadores-bombeiros",
+          "label": "Regimento Sapadores Bombeiros"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros",
+          "label": "Direção Municipal de Recursos Financeiros"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-gestao-financeira-e-orcamental",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Gestão Financeira e Orçamental"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-receita",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Receita"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-tesouraria",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Tesouraria"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-compras",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Compras"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-fontes-de-financiamento",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Fontes de Financiamento"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-gestao-de-ativos",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Gestão de Ativos"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/gabinete-de-controlo-de-gestao",
+          "label": "Direção Municipal de Recursos Financeiros / Gabinete de Controlo de Gestão"
+        },
+        {
+          "value": "direcao-municipal-de-desenvolvimento-urbano",
+          "label": "Direção Municipal de Desenvolvimento Urbano"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-planeamento-e-ordenamento-do-territorio",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Planeamento e Ordenamento do Território"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-informacao-geografica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Informação Geográfica"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-solos-e-patrimonio-imobiliario",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Solos e Património Imobiliário"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-gestao-de-procedimentos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Gestão de Procedimentos Urbanísticos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-apreciacao-arquitetonica-e-urbanistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Apreciação Arquitetónica e Urbanística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/gabinete-de-informacao-estatistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Gabinete de Informação Estatística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-projetos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Projetos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-estudos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Estudos Urbanísticos"
+          },
+        {
+          "value": "direcao-municipal-de-educacao",
+          "label": "Direção Municipal de Educação"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-escolar",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão Escolar"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-de-infraestruturas-escolares",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão de Infraestruturas Escolares"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/divisao-municipal-de-programas-educativos",
+          "label": "Direção Municipal de Educação / Divisão Municipal de Programas Educativos"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-gestao-ambiental",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Gestão Ambiental"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-saude-publica-e-bem-estar-animal",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Saúde Pública e Bem-Estar Animal"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/gabinete-de-gestao-do-ruido",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Gabinete de Gestão do Ruído"
+        },
+        {
+          "value": "departamento-municipal-de-protecao-de-dados",
+          "label": "Departamento Municipal de Proteção de Dados"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-estrutura-verde",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Estrutura Verde"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-conservacao-infraestruturas-e-gestao-de-frota",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Conservação, Infraestruturas e Gestão de Frota"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/gabinete-de-arvoredo-e-viveiro-municipal",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Gabinete de Arvoredo e Viveiro Municipal"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-da-promocao-da-saude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal da Promoção da Saúde"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-juventude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal Juventude"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas",
+          "label": "Departamento Municipal de Atividades Económicas"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-comercio",
+          "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Comércio"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-alojamento-local",
+          "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Alojamento Local"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/gabinete-de-feiras-e-mercados",
+          "label": "Departamento Municipal de Atividades Económicas / Gabinete de Feiras e Mercados"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/gabinete-da-movida",
+          "label": "Departamento Municipal de Atividades Económicas / Gabinete da Movida"
+        },
+        {
+          "value": "departamento-municipal-de-economia",
+          "label": "Departamento Municipal de Economia"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-investporto",
+          "label": "Departamento Municipal de Economia / Divisão Municipal InvestPorto"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-de-talento-e-de-promocao-da-empregabilidade",
+          "label": "Departamento Municipal de Economia / Divisão Municipal de Talento e de Promoção da Empregabilidade"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-de-empreendedorismo",
+          "label": "Departamento Municipal de Economia / Divisão Municipal de Empreendedorismo"
+        },
+        {
+          "value": "departamento-municipal-de-economia/gabinete-de-informacao-e-estudos-estrategicos",
+          "label": "Departamento Municipal de Economia / Gabinete de Informação e Estudos Estratégicos"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao",
+          "label": "Departamento Municipal de Fiscalização"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-obras-particulares",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Obras Particulares"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-geral-e-de-atividade-comercial",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Geral e de Atividade Comercial"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-ambiental-e-intervencao-na-via-publica",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Ambiental e Intervenção na Via Pública"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-seguranca-e-salubridade-das-edificacoes",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Segurança e Salubridade das Edificações"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-comunicacoes-previas-e-inspecoes",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Comunicações Prévias e Inspeções"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/gabinete-de-apoio-a-gestao",
+          "label": "Departamento Municipal de Fiscalização / Gabinete de Apoio à Gestão"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-planeamento-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Planeamento da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-da-gestao-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal da Gestão da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-sinalizacao-de-transito",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Sinalização de Trânsito"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-gestao-de-ocupacao-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Gestão de Ocupação do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-requalificacao-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Requalificação do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-obras-no-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Obras no Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social",
+          "label": "Departamento Municipal de Coesão Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social/gabinete-de-gestao-do-centro-de-acolhimento-temporario-joaquim-urbano",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social / Gabinete de Gestão do Centro de Acolhimento Temporário Joaquim Urbano"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-apoios-e-acompanhamento-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Apoios e Acompanhamento Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-desenvolvimento-e-inovacao-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Desenvolvimento e Inovação Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-gestao-da-rede-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Gestão da Rede Social"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao",
+          "label": "Departamento Municipal de Turismo e Internacionalização"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-internacionalizacao",
+          "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Internacionalização"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-turismo",
+          "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Turismo"
+        },
+        {
+          "value": "agora-cultura-e-desporto-do-porto",
+          "label": "Ágora - Cultura e Desporto do Porto"
+        },
+        {
+          "value": "aguas-e-energia-do-porto",
+          "label": "Águas e Energia do Porto"
+        },
+        {
+          "value": "domus-social",
+          "label": "Domus Social"
+        },
+        {
+          "value": "go-porto",
+          "label": "GO Porto"
+        },
+        {
+          "value": "porto-ambiente",
+          "label": "Porto Ambiente"
+        },
+        {
+          "value": "porto-vivo",
+          "label": "Porto Vivo"
+        },
+        {
+          "value": "porto-digital",
+          "label": "Porto Digital"
+        },
+        {
+          "value": "stcp",
+          "label": "STCP"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "field_name": "author_name",
+      "label": "Author Name",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "tutor",
+      "label": "Tutor",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor",
+      "preset": "users_validator",
+      "form_include_blank_choice": true,
+      "required": true,
+      "choices": [
+        {
+          "value": "direcao-municipal-da-presidencia",
+          "label": "Direção Municipal da Presidência"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-relacoes-internacionais-e-de-protocolo",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Relações Internacionais e de Protocolo"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/divisao-municipal-de-producao-de-conteudos",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Divisão Municipal de Produção de Conteúdos"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/gabinete-de-gestao-da-marca",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Gabinete de Gestão da Marca"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/departamento-municipal-de-auditoria-interna",
+          "label": "Direção Municipal da Presidência / Departamento Municipal de Auditoria Interna"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-camara-municipal",
+          "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Câmara Municipal"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-assembleia-municipal",
+          "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Assembleia Municipal"
+        },
+        {
+          "value": "direcao-municipal-da-presidencia/gabinete-de-apoio-ao-provedor-do-municipe",
+          "label": "Direção Municipal da Presidência / Gabinete de Apoio ao Provedor do Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio",
+          "label": "Direção Municipal de Cultura e Património"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas",
+          "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas/gabinete-de-apoio-as-bibliotecas-e-a-leitura",
+          "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas / Gabinete de Apoio às Bibliotecas e à Leitura"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-arquivo-historico",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Arquivo Histórico"
+        },
+        {
+          "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-museus",
+          "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Museus"
+        },
+        {
+          "value": "policia-municipal",
+          "label": "Polícia Municipal"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes",
+          "label": "Polícia Municipal / Departamento Municipal de Operações"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-apoio-geral",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Apoio Geral"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-policial",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal Policial"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-transito",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Trânsito"
+        },
+        {
+          "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-seguranca-e-infraestruturas",
+          "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Segurança e Infraestruturas"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-secretaria-geral",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Secretaria Geral"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-atendimento",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Atendimento"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-arquivo-geral",
+          "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Arquivo Geral"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-gestao-da-informacao",
+          "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Gestão da Informação"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-operacao-do-cgi",
+          "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Operação do CGI"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-ao-municipe/gabinete-de-novos-servicos-ao-municipe",
+          "label": "Direção Municipal de Serviços ao Munícipe / Gabinete de Novos Serviços ao Munícipe"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao",
+          "label": "Direção Municipal de Sistemas de Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-gestao-de-aplicacoes-e-informacao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Gestão de Aplicações e Informação"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-sistemas-e-comunicacoes",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Sistemas e Comunicações"
+        },
+        {
+          "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-suporte-e-manutencao",
+          "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Suporte e Manutenção"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-recrutamento-e-selecao",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Recrutamento e Seleção"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-gestao-e-remuneracoes",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Gestão e Remunerações"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-seguranca-e-saude-no-trabalho",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Segurança e Saúde no Trabalho"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-socioprofissional",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Socioprofissional"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-formacao-e-desenvolvimento",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Formação e Desenvolvimento"
+        },
+        {
+          "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-integrada",
+          "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Integrada"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos",
+          "label": "Direção Municipal de Serviços Jurídicos"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-assessoria-e-de-gestao-da-producao-juridica",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Assessoria e de Gestão da Produção Jurídica"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-execucoes-fiscais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Execuções Fiscais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-rodoviarias",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Rodoviárias"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-gerais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Gerais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-juridico-a-contratacao-e-as-empresas-municipais",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio Jurídico à Contratação e às Empresas Municipais"
+        },
+        {
+          "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-a-gestao-de-contratos",
+          "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio à Gestão de Contratos"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil",
+          "label": "Serviço Municipal de Proteção Civil"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/divisao-municipal-de-planeamento-e-monitorizacao-de-risco",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Divisão Municipal de Planeamento e Monitorização de Risco"
+        },
+        {
+          "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/gabinete-de-operacoes-e-mitigacao-de-risco",
+          "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Gabinete de Operações e Mitigação de Risco"
+        },
+        {
+          "value": "regimento-sapadores-bombeiros",
+          "label": "Regimento Sapadores Bombeiros"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros",
+          "label": "Direção Municipal de Recursos Financeiros"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-gestao-financeira-e-orcamental",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Gestão Financeira e Orçamental"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-receita",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Receita"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-tesouraria",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Tesouraria"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-compras",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Compras"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-fontes-de-financiamento",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Fontes de Financiamento"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-gestao-de-ativos",
+          "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Gestão de Ativos"
+        },
+        {
+          "value": "direcao-municipal-de-recursos-financeiros/gabinete-de-controlo-de-gestao",
+          "label": "Direção Municipal de Recursos Financeiros / Gabinete de Controlo de Gestão"
+        },
+        {
+          "value": "direcao-municipal-de-desenvolvimento-urbano",
+          "label": "Direção Municipal de Desenvolvimento Urbano"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-planeamento-e-ordenamento-do-territorio",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Planeamento e Ordenamento do Território"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-informacao-geografica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Informação Geográfica"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-solos-e-patrimonio-imobiliario",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Solos e Património Imobiliário"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-gestao-de-procedimentos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Gestão de Procedimentos Urbanísticos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-apreciacao-arquitetonica-e-urbanistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Apreciação Arquitetónica e Urbanística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/gabinete-de-informacao-estatistica",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Gabinete de Informação Estatística"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-projetos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Projetos"
+          },
+          {
+          "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-estudos-urbanisticos",
+          "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Estudos Urbanísticos"
+          },
+        {
+          "value": "direcao-municipal-de-educacao",
+          "label": "Direção Municipal de Educação"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-escolar",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão Escolar"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-de-infraestruturas-escolares",
+          "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão de Infraestruturas Escolares"
+        },
+        {
+          "value": "direcao-municipal-de-educacao/divisao-municipal-de-programas-educativos",
+          "label": "Direção Municipal de Educação / Divisão Municipal de Programas Educativos"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-gestao-ambiental",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Gestão Ambiental"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-saude-publica-e-bem-estar-animal",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Saúde Pública e Bem-Estar Animal"
+        },
+        {
+          "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/gabinete-de-gestao-do-ruido",
+          "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Gabinete de Gestão do Ruído"
+        },
+        {
+          "value": "departamento-municipal-de-protecao-de-dados",
+          "label": "Departamento Municipal de Proteção de Dados"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-estrutura-verde",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Estrutura Verde"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-conservacao-infraestruturas-e-gestao-de-frota",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Conservação, Infraestruturas e Gestão de Frota"
+        },
+        {
+          "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/gabinete-de-arvoredo-e-viveiro-municipal",
+          "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Gabinete de Arvoredo e Viveiro Municipal"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-da-promocao-da-saude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal da Promoção da Saúde"
+        },
+        {
+          "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-juventude",
+          "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal Juventude"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas",
+          "label": "Departamento Municipal de Atividades Económicas"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-comercio",
+          "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Comércio"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-alojamento-local",
+          "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Alojamento Local"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/gabinete-de-feiras-e-mercados",
+          "label": "Departamento Municipal de Atividades Económicas / Gabinete de Feiras e Mercados"
+        },
+        {
+          "value": "departamento-municipal-de-atividades-economicas/gabinete-da-movida",
+          "label": "Departamento Municipal de Atividades Económicas / Gabinete da Movida"
+        },
+        {
+          "value": "departamento-municipal-de-economia",
+          "label": "Departamento Municipal de Economia"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-investporto",
+          "label": "Departamento Municipal de Economia / Divisão Municipal InvestPorto"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-de-talento-e-de-promocao-da-empregabilidade",
+          "label": "Departamento Municipal de Economia / Divisão Municipal de Talento e de Promoção da Empregabilidade"
+        },
+        {
+          "value": "departamento-municipal-de-economia/divisao-municipal-de-empreendedorismo",
+          "label": "Departamento Municipal de Economia / Divisão Municipal de Empreendedorismo"
+        },
+        {
+          "value": "departamento-municipal-de-economia/gabinete-de-informacao-e-estudos-estrategicos",
+          "label": "Departamento Municipal de Economia / Gabinete de Informação e Estudos Estratégicos"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao",
+          "label": "Departamento Municipal de Fiscalização"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-obras-particulares",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Obras Particulares"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-geral-e-de-atividade-comercial",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Geral e de Atividade Comercial"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-ambiental-e-intervencao-na-via-publica",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Ambiental e Intervenção na Via Pública"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-seguranca-e-salubridade-das-edificacoes",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Segurança e Salubridade das Edificações"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-comunicacoes-previas-e-inspecoes",
+          "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Comunicações Prévias e Inspeções"
+        },
+        {
+          "value": "departamento-municipal-de-fiscalizacao/gabinete-de-apoio-a-gestao",
+          "label": "Departamento Municipal de Fiscalização / Gabinete de Apoio à Gestão"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-planeamento-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Planeamento da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-da-gestao-da-mobilidade",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal da Gestão da Mobilidade"
+        },
+        {
+          "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-sinalizacao-de-transito",
+          "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Sinalização de Trânsito"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-gestao-de-ocupacao-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Gestão de Ocupação do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-requalificacao-do-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Requalificação do Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-obras-no-espaco-publico",
+          "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Obras no Espaço Público"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social",
+          "label": "Departamento Municipal de Coesão Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social/gabinete-de-gestao-do-centro-de-acolhimento-temporario-joaquim-urbano",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social / Gabinete de Gestão do Centro de Acolhimento Temporário Joaquim Urbano"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-apoios-e-acompanhamento-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Apoios e Acompanhamento Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-desenvolvimento-e-inovacao-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Desenvolvimento e Inovação Social"
+        },
+        {
+          "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-gestao-da-rede-social",
+          "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Gestão da Rede Social"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao",
+          "label": "Departamento Municipal de Turismo e Internacionalização"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-internacionalizacao",
+          "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Internacionalização"
+        },
+        {
+          "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-turismo",
+          "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Turismo"
+        },
+        {
+          "value": "agora-cultura-e-desporto-do-porto",
+          "label": "Ágora - Cultura e Desporto do Porto"
+        },
+        {
+          "value": "aguas-e-energia-do-porto",
+          "label": "Águas e Energia do Porto"
+        },
+        {
+          "value": "domus-social",
+          "label": "Domus Social"
+        },
+        {
+          "value": "go-porto",
+          "label": "GO Porto"
+        },
+        {
+          "value": "porto-ambiente",
+          "label": "Porto Ambiente"
+        },
+        {
+          "value": "porto-vivo",
+          "label": "Porto Vivo"
+        },
+        {
+          "value": "porto-digital",
+          "label": "Porto Digital"
+        },
+        {
+          "value": "stcp",
+          "label": "STCP"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "field_name": "tutor_name",
+      "label": "Tutor Name",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "tutor_contact",
+      "label": "Tutor Contact",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html"
+    },
+    {
+      "field_name": "provider",
+      "label": "Provider",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": false,
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Sim"
+        },
+        {
+          "value": "no",
+          "label": "Não"
+        }
+      ]
+    },
+    {
+      "field_name": "provider_info",
+      "label": "Provider Information",
+      "repeating_subfields": [
+        {
+          "field_name": "provider_options",
+          "label": "Select a Provider",
+          "preset": "users_validator",
+          "form_include_blank_choice": true,
+          "choices": [
+            {
+              "value": "direcao-municipal-da-presidencia",
+              "label": "Direção Municipal da Presidência"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/departamento-municipal-de-relacoes-internacionais-e-de-protocolo",
+              "label": "Direção Municipal da Presidência / Departamento Municipal de Relações Internacionais e de Protocolo"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao",
+              "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/divisao-municipal-de-producao-de-conteudos",
+              "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Divisão Municipal de Produção de Conteúdos"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/departamento-municipal-de-comunicacao-e-promocao/gabinete-de-gestao-da-marca",
+              "label": "Direção Municipal da Presidência / Departamento Municipal de Comunicação e Promoção / Gabinete de Gestão da Marca"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/departamento-municipal-de-auditoria-interna",
+              "label": "Direção Municipal da Presidência / Departamento Municipal de Auditoria Interna"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-camara-municipal",
+              "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Câmara Municipal"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/divisao-municipal-de-apoio-a-assembleia-municipal",
+              "label": "Direção Municipal da Presidência / Divisão Municipal de Apoio à Assembleia Municipal"
+            },
+            {
+              "value": "direcao-municipal-da-presidencia/gabinete-de-apoio-ao-provedor-do-municipe",
+              "label": "Direção Municipal da Presidência / Gabinete de Apoio ao Provedor do Munícipe"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio",
+              "label": "Direção Municipal de Cultura e Património"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas",
+              "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio/divisao-municipal-de-bibliotecas/gabinete-de-apoio-as-bibliotecas-e-a-leitura",
+              "label": "Direção Municipal de Cultura e Património / Divisão Municipal de Bibliotecas / Gabinete de Apoio às Bibliotecas e à Leitura"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural",
+              "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-arquivo-historico",
+              "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Arquivo Histórico"
+            },
+            {
+              "value": "direcao-municipal-de-cultura-e-patrimonio/departamento-municipal-de-gestao-do-patrimonio-cultural/divisao-municipal-de-museus",
+              "label": "Direção Municipal de Cultura e Património / Departamento Municipal de Gestão do Património Cultural / Divisão Municipal de Museus"
+            },
+            {
+              "value": "policia-municipal",
+              "label": "Polícia Municipal"
+            },
+            {
+              "value": "policia-municipal/departamento-municipal-de-operacoes",
+              "label": "Polícia Municipal / Departamento Municipal de Operações"
+            },
+            {
+              "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-apoio-geral",
+              "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Apoio Geral"
+            },
+            {
+              "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-policial",
+              "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal Policial"
+            },
+            {
+              "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-transito",
+              "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Trânsito"
+            },
+            {
+              "value": "policia-municipal/departamento-municipal-de-operacoes/divisao-municipal-de-seguranca-e-infraestruturas",
+              "label": "Polícia Municipal / Departamento Municipal de Operações / Divisão Municipal de Segurança e Infraestruturas"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe",
+              "label": "Direção Municipal de Serviços ao Munícipe"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe",
+              "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-secretaria-geral",
+              "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Secretaria Geral"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-atendimento",
+              "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Atendimento"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/departamento-municipal-do-gabinete-do-municipe/divisao-municipal-de-arquivo-geral",
+              "label": "Direção Municipal de Serviços ao Munícipe / Departamento Municipal do Gabinete do Munícipe / Divisão Municipal de Arquivo Geral"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-gestao-da-informacao",
+              "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Gestão da Informação"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/divisao-municipal-de-operacao-do-cgi",
+              "label": "Direção Municipal de Serviços ao Munícipe / Divisão Municipal de Operação do CGI"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-ao-municipe/gabinete-de-novos-servicos-ao-municipe",
+              "label": "Direção Municipal de Serviços ao Munícipe / Gabinete de Novos Serviços ao Munícipe"
+            },
+            {
+              "value": "direcao-municipal-de-sistemas-de-informacao",
+              "label": "Direção Municipal de Sistemas de Informação"
+            },
+            {
+              "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao",
+              "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação"
+            },
+            {
+              "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-gestao-de-aplicacoes-e-informacao",
+              "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Gestão de Aplicações e Informação"
+            },
+            {
+              "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-sistemas-e-comunicacoes",
+              "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Sistemas e Comunicações"
+            },
+            {
+              "value": "direcao-municipal-de-sistemas-de-informacao/departamento-municipal-de-gestao-de-sistemas-de-informacao/divisao-municipal-de-suporte-e-manutencao",
+              "label": "Direção Municipal de Sistemas de Informação / Departamento Municipal de Gestão de Sistemas de Informação / Divisão Municipal de Suporte e Manutenção"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-recrutamento-e-selecao",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Recrutamento e Seleção"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-gestao-e-remuneracoes",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Gestão e Remunerações"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/departamento-municipal-de-gestao-de-pessoas/divisao-municipal-de-seguranca-e-saude-no-trabalho",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Departamento Municipal de Gestão de Pessoas / Divisão Municipal de Segurança e Saúde no Trabalho"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-socioprofissional",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Socioprofissional"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-formacao-e-desenvolvimento",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Formação e Desenvolvimento"
+            },
+            {
+              "value": "direcao-municipal-de-gestao-de-pessoas-e-organizacao/divisao-municipal-de-gestao-integrada",
+              "label": "Direção Municipal de Gestão de Pessoas e Organização / Divisão Municipal de Gestão Integrada"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos",
+              "label": "Direção Municipal de Serviços Jurídicos"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-assessoria-e-de-gestao-da-producao-juridica",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Assessoria e de Gestão da Produção Jurídica"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-execucoes-fiscais",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Execuções Fiscais"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-rodoviarias",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Rodoviárias"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-juridico-e-de-contencioso/divisao-municipal-de-execucoes-fiscais-e-contraordenacoes/gabinete-de-contraordenacoes-gerais",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal Jurídico e de Contencioso / Divisão Municipal de Execuções Fiscais e Contraordenações / Gabinete de Contraordenações Gerais"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-juridico-a-contratacao-e-as-empresas-municipais",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio Jurídico à Contratação e às Empresas Municipais"
+            },
+            {
+              "value": "direcao-municipal-de-servicos-juridicos/departamento-municipal-de-apoio-a-contratacao-e-as-entidades-participadas/divisao-municipal-de-apoio-a-gestao-de-contratos",
+              "label": "Direção Municipal de Serviços Jurídicos / Departamento Municipal de Apoio à Contratação e às Entidades Participadas / Divisão Municipal de Apoio à Gestão de Contratos"
+            },
+            {
+              "value": "servico-municipal-de-protecao-civil",
+              "label": "Serviço Municipal de Proteção Civil"
+            },
+            {
+              "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil",
+              "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil"
+            },
+            {
+              "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/divisao-municipal-de-planeamento-e-monitorizacao-de-risco",
+              "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Divisão Municipal de Planeamento e Monitorização de Risco"
+            },
+            {
+              "value": "servico-municipal-de-protecao-civil/departamento-municipal-de-protecao-civil/gabinete-de-operacoes-e-mitigacao-de-risco",
+              "label": "Serviço Municipal de Proteção Civil / Departamento Municipal de Proteção Civil / Gabinete de Operações e Mitigação de Risco"
+            },
+            {
+              "value": "regimento-sapadores-bombeiros",
+              "label": "Regimento Sapadores Bombeiros"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros",
+              "label": "Direção Municipal de Recursos Financeiros"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-gestao-financeira-e-orcamental",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Gestão Financeira e Orçamental"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-receita",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Receita"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-financas/divisao-municipal-de-tesouraria",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Finanças / Divisão Municipal de Tesouraria"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-compras",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Compras"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-fontes-de-financiamento",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Fontes de Financiamento"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/departamento-municipal-de-compras-ativos-e-fontes-de-financiamento/divisao-municipal-de-gestao-de-ativos",
+              "label": "Direção Municipal de Recursos Financeiros / Departamento Municipal de Compras, Ativos e Fontes de Financiamento / Divisão Municipal de Gestão de Ativos"
+            },
+            {
+              "value": "direcao-municipal-de-recursos-financeiros/gabinete-de-controlo-de-gestao",
+              "label": "Direção Municipal de Recursos Financeiros / Gabinete de Controlo de Gestão"
+            },
+            {
+              "value": "direcao-municipal-de-desenvolvimento-urbano",
+              "label": "Direção Municipal de Desenvolvimento Urbano"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-planeamento-e-ordenamento-do-territorio",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Planeamento e Ordenamento do Território"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-informacao-geografica",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Informação Geográfica"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-planeamento-urbano/divisao-municipal-de-solos-e-patrimonio-imobiliario",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Planeamento Urbano / Divisão Municipal de Solos e Património Imobiliário"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-gestao-de-procedimentos-urbanisticos",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Gestão de Procedimentos Urbanísticos"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/divisao-municipal-de-apreciacao-arquitetonica-e-urbanistica",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Divisão Municipal de Apreciação Arquitetónica e Urbanística"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-gestao-urbanistica/gabinete-de-informacao-estatistica",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Gestão Urbanística / Gabinete de Informação Estatística"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-projetos",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Projetos"
+              },
+              {
+              "value": "direcao-municipal-de-desenvolvimento-urbano/departamento-municipal-de-estudos-e-projetos-urbanisticos/divisao-municipal-de-estudos-urbanisticos",
+              "label": "Direção Municipal de Desenvolvimento Urbano / Departamento Municipal de Estudos e Projetos Urbanísticos / Divisão Municipal de Estudos Urbanísticos"
+              },
+            {
+              "value": "direcao-municipal-de-educacao",
+              "label": "Direção Municipal de Educação"
+            },
+            {
+              "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar",
+              "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar"
+            },
+            {
+              "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-escolar",
+              "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão Escolar"
+            },
+            {
+              "value": "direcao-municipal-de-educacao/departamento-municipal-de-planeamento-e-administracao-escolar/divisao-municipal-de-gestao-de-infraestruturas-escolares",
+              "label": "Direção Municipal de Educação / Departamento Municipal de Planeamento e Administração Escolar / Divisão Municipal de Gestão de Infraestruturas Escolares"
+            },
+            {
+              "value": "direcao-municipal-de-educacao/divisao-municipal-de-programas-educativos",
+              "label": "Direção Municipal de Educação / Divisão Municipal de Programas Educativos"
+            },
+            {
+              "value": "departamento-municipal-de-planeamento-e-gestao-ambiental",
+              "label": "Departamento Municipal de Planeamento e Gestão Ambiental"
+            },
+            {
+              "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-gestao-ambiental",
+              "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Gestão Ambiental"
+            },
+            {
+              "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/divisao-municipal-de-saude-publica-e-bem-estar-animal",
+              "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Divisão Municipal de Saúde Pública e Bem-Estar Animal"
+            },
+            {
+              "value": "departamento-municipal-de-planeamento-e-gestao-ambiental/gabinete-de-gestao-do-ruido",
+              "label": "Departamento Municipal de Planeamento e Gestão Ambiental / Gabinete de Gestão do Ruído"
+            },
+            {
+              "value": "departamento-municipal-de-protecao-de-dados",
+              "label": "Departamento Municipal de Proteção de Dados"
+            },
+            {
+              "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas",
+              "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas"
+            },
+            {
+              "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-estrutura-verde",
+              "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Estrutura Verde"
+            },
+            {
+              "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/divisao-municipal-de-conservacao-infraestruturas-e-gestao-de-frota",
+              "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Divisão Municipal de Conservação, Infraestruturas e Gestão de Frota"
+            },
+            {
+              "value": "departamento-municipal-de-espacos-verdes-e-gestao-de-infraestruturas/gabinete-de-arvoredo-e-viveiro-municipal",
+              "label": "Departamento Municipal de Espaços Verdes e Gestão de Infraestruturas / Gabinete de Arvoredo e Viveiro Municipal"
+            },
+            {
+              "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude",
+              "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude"
+            },
+            {
+              "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-da-promocao-da-saude",
+              "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal da Promoção da Saúde"
+            },
+            {
+              "value": "departamento-municipal-de-promocao-de-saude-e-qualidade-de-vida-e-juventude/divisao-municipal-juventude",
+              "label": "Departamento Municipal de Promoção de Saúde e Qualidade de Vida e Juventude / Divisão Municipal Juventude"
+            },
+            {
+              "value": "departamento-municipal-de-atividades-economicas",
+              "label": "Departamento Municipal de Atividades Económicas"
+            },
+            {
+              "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-comercio",
+              "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Comércio"
+            },
+            {
+              "value": "departamento-municipal-de-atividades-economicas/divisao-municipal-de-alojamento-local",
+              "label": "Departamento Municipal de Atividades Económicas / Divisão Municipal de Alojamento Local"
+            },
+            {
+              "value": "departamento-municipal-de-atividades-economicas/gabinete-de-feiras-e-mercados",
+              "label": "Departamento Municipal de Atividades Económicas / Gabinete de Feiras e Mercados"
+            },
+            {
+              "value": "departamento-municipal-de-atividades-economicas/gabinete-da-movida",
+              "label": "Departamento Municipal de Atividades Económicas / Gabinete da Movida"
+            },
+            {
+              "value": "departamento-municipal-de-economia",
+              "label": "Departamento Municipal de Economia"
+            },
+            {
+              "value": "departamento-municipal-de-economia/divisao-municipal-investporto",
+              "label": "Departamento Municipal de Economia / Divisão Municipal InvestPorto"
+            },
+            {
+              "value": "departamento-municipal-de-economia/divisao-municipal-de-talento-e-de-promocao-da-empregabilidade",
+              "label": "Departamento Municipal de Economia / Divisão Municipal de Talento e de Promoção da Empregabilidade"
+            },
+            {
+              "value": "departamento-municipal-de-economia/divisao-municipal-de-empreendedorismo",
+              "label": "Departamento Municipal de Economia / Divisão Municipal de Empreendedorismo"
+            },
+            {
+              "value": "departamento-municipal-de-economia/gabinete-de-informacao-e-estudos-estrategicos",
+              "label": "Departamento Municipal de Economia / Gabinete de Informação e Estudos Estratégicos"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao",
+              "label": "Departamento Municipal de Fiscalização"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-obras-particulares",
+              "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Obras Particulares"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-geral-e-de-atividade-comercial",
+              "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Geral e de Atividade Comercial"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-ambiental-e-intervencao-na-via-publica",
+              "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização Ambiental e Intervenção na Via Pública"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-fiscalizacao-de-seguranca-e-salubridade-das-edificacoes",
+              "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Fiscalização de Segurança e Salubridade das Edificações"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/divisao-municipal-de-comunicacoes-previas-e-inspecoes",
+              "label": "Departamento Municipal de Fiscalização / Divisão Municipal de Comunicações Prévias e Inspeções"
+            },
+            {
+              "value": "departamento-municipal-de-fiscalizacao/gabinete-de-apoio-a-gestao",
+              "label": "Departamento Municipal de Fiscalização / Gabinete de Apoio à Gestão"
+            },
+            {
+              "value": "departamento-municipal-da-mobilidade",
+              "label": "Departamento Municipal da Mobilidade"
+            },
+            {
+              "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-planeamento-da-mobilidade",
+              "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Planeamento da Mobilidade"
+            },
+            {
+              "value": "departamento-municipal-da-mobilidade/divisao-municipal-da-gestao-da-mobilidade",
+              "label": "Departamento Municipal da Mobilidade / Divisão Municipal da Gestão da Mobilidade"
+            },
+            {
+              "value": "departamento-municipal-da-mobilidade/divisao-municipal-de-sinalizacao-de-transito",
+              "label": "Departamento Municipal da Mobilidade / Divisão Municipal de Sinalização de Trânsito"
+            },
+            {
+              "value": "departamento-municipal-do-espaco-publico",
+              "label": "Departamento Municipal do Espaço Público"
+            },
+            {
+              "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-gestao-de-ocupacao-do-espaco-publico",
+              "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Gestão de Ocupação do Espaço Público"
+            },
+            {
+              "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-requalificacao-do-espaco-publico",
+              "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Requalificação do Espaço Público"
+            },
+            {
+              "value": "departamento-municipal-do-espaco-publico/divisao-municipal-de-obras-no-espaco-publico",
+              "label": "Departamento Municipal do Espaço Público / Divisão Municipal de Obras no Espaço Público"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social",
+              "label": "Departamento Municipal de Coesão Social"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social",
+              "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-intervencao-social/gabinete-de-gestao-do-centro-de-acolhimento-temporario-joaquim-urbano",
+              "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Intervenção Social / Gabinete de Gestão do Centro de Acolhimento Temporário Joaquim Urbano"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-apoios-e-acompanhamento-social",
+              "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Apoios e Acompanhamento Social"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-desenvolvimento-e-inovacao-social",
+              "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Desenvolvimento e Inovação Social"
+            },
+            {
+              "value": "departamento-municipal-de-coesao-social/divisao-municipal-de-gestao-da-rede-social",
+              "label": "Departamento Municipal de Coesão Social / Divisão Municipal de Gestão da Rede Social"
+            },
+            {
+              "value": "departamento-municipal-de-turismo-e-internacionalizacao",
+              "label": "Departamento Municipal de Turismo e Internacionalização"
+            },
+            {
+              "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-internacionalizacao",
+              "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Internacionalização"
+            },
+            {
+              "value": "departamento-municipal-de-turismo-e-internacionalizacao/divisao-municipal-de-turismo",
+              "label": "Departamento Municipal de Turismo e Internacionalização / Divisão Municipal de Turismo"
+            },
+            {
+              "value": "agora-cultura-e-desporto-do-porto",
+              "label": "Ágora - Cultura e Desporto do Porto"
+            },
+            {
+              "value": "aguas-e-energia-do-porto",
+              "label": "Águas e Energia do Porto"
+            },
+            {
+              "value": "domus-social",
+              "label": "Domus Social"
+            },
+            {
+              "value": "go-porto",
+              "label": "GO Porto"
+            },
+            {
+              "value": "porto-ambiente",
+              "label": "Porto Ambiente"
+            },
+            {
+              "value": "porto-vivo",
+              "label": "Porto Vivo"
+            },
+            {
+              "value": "porto-digital",
+              "label": "Porto Digital"
+            },
+            {
+              "value": "stcp",
+              "label": "STCP"
+            },
+            {
+              "value": "other",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "field_name": "provider_name",
+          "label": "Provider Name",
+          "form_placeholder": "Joe Bloggs",
+          "display_property": "dc:provider"
+        },
+        {
+          "field_name": "origin",
+          "label": "Origin",
+          "form_placeholder": "eg. Specify, if possible, from where the dataset cames from"
+        },
+        {
+          "field_name": "consult_date",
+          "label": "Consult Date",
+          "preset": "date"
+        },
+        {
+          "field_name": "provider_contact",
+	        "label": "Provider Contact",
+      	  "form_placeholder": "joe@example.com",
+     	    "display_property": "dc:creator",
+      	  "display_snippet": "email.html"
+        }
+      ]
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publisher",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:publisher"
+    },
+    {
+      "field_name": "publisher_contact",
+      "label": "Publisher Contact",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:publisher",
+      "display_snippet": "email.html"
+    },   
+    {
+      "field_name": "frequency",
+      "label": "Frequency",
+      "preset": "select",
+      "form_include_blank_choice": false,
+      "required": true,
+      "choices": [
+        {
+          "value": "continuos",
+          "label": "Contínua"
+        },
+        {
+          "value": "as_needed",
+          "label": "Conforme Necessário"
+        },
+        {
+          "value": "1d",
+          "label": "Diária"
+        },
+        {
+          "value": "7d",
+          "label": "Semanal"
+        },
+        {
+          "value": "15d",
+          "label": "Quinzenal"
+        },
+        {
+          "value": "1m",
+          "label": "Mensal"
+        },
+        {
+          "value": "3m",
+          "label": "Trimestral"
+        },
+        {
+          "value": "6m",
+          "label": "Semestral"
+        },
+        {
+          "value": "1y",
+          "label": "Anual"
+        },
+        {
+          "value": "10y",
+          "label": "Decenal"
+        },
+        {
+          "value": "irregular",
+          "label": "Irregular"
+        },
+        {
+          "value": "no_update",
+          "label": "Sem Atualização"
+        }
+      ]
+    },
+    {
+      "field_name": "frequency_da",
+      "label": "OD's update frequency",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": false,
+      "choices": [
+        {
+          "value": "continuos",
+          "label": "Contínua"
+        },
+        {
+          "value": "as_needed",
+          "label": "Conforme Necessário"
+        },
+        {
+          "value": "1d",
+          "label": "Diária"
+        },
+        {
+          "value": "7d",
+          "label": "Semanal"
+        },
+        {
+          "value": "15d",
+          "label": "Quinzenal"
+        },
+        {
+          "value": "1m",
+          "label": "Mensal"
+        },
+        {
+          "value": "3m",
+          "label": "Trimestral"
+        },
+        {
+          "value": "6m",
+          "label": "Semestral"
+        },
+        {
+          "value": "1y",
+          "label": "Anual"
+        },
+        {
+          "value": "10y",
+          "label": "Decenal"
+        },
+        {
+          "value": "irregular",
+          "label": "Irregular"
+        },
+        {
+          "value": "no_update",
+          "label": "Sem Atualização"
+        }
+      ]
+    },
+    {
+      "field_name": "tag_string",
+      "label": "Keyword",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government"
+    },
+    {
+      "field_name": "georeferenced",
+      "label": "Georeferenced",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": false,
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Sim"
+        },
+        {
+          "value": "no",
+          "label": "Não"
+        }
+      ]
+    },
+    {
+      "field_name": "georeferenced_info",
+      "label": "Georeferenced Information",
+      "required": false,
+      "repeating_subfields": [
+        {
+          "field_name": "reference_system",
+          "label": "Reference System",
+          "required": false,
+          "preset": "select",
+          "form_include_blank_choice": false,
+          "choices": [
+       	    {
+              "value": "epsg_3763",
+              "label": "EPSG: 3763 (PT-TM06/ETRS89)"
+            },
+	          {
+              "value": "epsg_27493",
+              "label": "EPSG: 27493 (Datum 73 / Hayford-Gauss), antigo EPSG 27492"
+       	    },
+            {
+              "value": "epsg_4326",
+              "label": "EPSG: 4326 (WGS 84/ Coordenadas Geográficas)"
+            }
+          ]
+        },
+        {
+          "field_name": "spacial_representation",
+          "label": "Spacial Representation",
+          "required": false,
+          "preset": "select",
+          "form_include_blank_choice": true,
+          "choices": [
+            {
+              "value": "point_vector",
+              "label": "Point Vector"
+            },
+            {
+              "value": "line_vector",
+              "label": "Line Vector"
+            },
+            {
+              "value": "polygon_vector",
+              "label": "Polygon Vector"
+            },
+            {
+              "value": "simple_matrix",
+              "label": "Simple Matrix"
+            },
+            {
+              "value": "photogrammetric_matrix",
+              "label": "Photogrammetric Matrix"
+            },
+            {
+              "value": "table_text",
+              "label": "Table Text"
+            },
+            {
+              "value": "tin",
+              "label": "TIN"
+            },
+            {
+              "value": "stereoscopic_model",
+              "label": "Stereoscopic Model"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            }
+          ]
+        },
+	      {
+          "field_name": "spacial_coverage",
+          "label": "Spacial Coverage",
+          "required": false,
+          "preset": "select",
+          "form_include_blank_choice": false,
+          "choices": [
+            {
+              "value": "parish",
+              "label": "Parish"
+            },
+            {
+              "value": "porto_municipality",
+              "label": "Porto (Municipality)"
+            },
+            {
+              "value": "metropolitan_area",
+              "label": "Porto Metropolitam Area"
+            },
+            {
+              "value": "north_region",
+              "label": "North Region"
+            },
+            {
+              "value": "nacional",
+              "label": "Nacional"
+            },
+            {
+              "value": "international",
+              "label": "International"
+            },
+            {
+              "value": "another",
+              "label": "Another"
+       	    }
+          ]
+        },
+	      {
+          "field_name": "spacial_granularaty",
+          "label": "Spacial Granularity",
+          "required": false,
+          "preset": "select",
+          "form_include_blank_choice": false,
+          "choices": [
+            {
+              "value": "poi",
+              "label": "POI"
+       	    },
+            {
+              "value": "track_centre",
+              "label": "Track Center"
+       	    },
+            {
+              "value": "bgri_statistics_subsection",
+              "label": "BGRI Statistics Subsection"
+       	    },
+            {
+              "value": "bgri_statistics_section",
+              "label": "BGRI Statistics Section"
+       	    },
+            {
+              "value": "quarter",
+              "label": "Quarter"
+       	    },
+            {
+              "value": "parish",
+              "label": "Parish"
+       	    },
+            {
+              "value": "municipality",
+              "label": "Municipality"
+            },
+            {
+              "value": "another",
+              "label": "Another"
+       	    }
+          ]
+	      },
+        {
+          "field_name": "spacial_resolution",
+          "label": "Spacial Resolution",
+          "required": false,
+          "preset": "select",
+          "form_include_blank_choice": true,
+          "choices": [
+            {
+              "value": "rigor_scale",
+              "label": "Rigor Scale"
+            },
+            {
+              "value": "distance_ground",
+              "label": "Distance on Ground"
+            }
+          ]
+        },
+        {
+      	  "field_name": "spacial_resolution_rs_value",
+          "label": "Rigor Scale Value",
+          "form_placeholder": "eg. 1:400"
+        },
+        {
+      	  "field_name": "spacial_resolution_dg_value",
+          "label": "Distance on Ground Value",
+          "form_placeholder": "eg. 10 meters"
+        }
+      ]
+    },
+    {
+      "field_name": "purpose",
+      "label": "Purpose",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Short description about the main goal for the development of the dataset"
+    },
+    {
+      "field_name": "base_programm",
+      "label": "Base Programm",
+      "preset": "select",
+      "form_placeholder": "eg. Base programm used to produce and manage the dataset",
+      "form_include_blank_choice": true,
+      "choices": [
+        {
+          "value": "excel",
+          "label": "Excel"
+        },
+        {
+          "value": "arcgis",
+          "label": "ArcGis"
+        },
+        {
+          "value": "gou",
+          "label": "GOU - Gestão de Operações Urbanísticas"
+        },
+        {
+          "value": "giie",
+          "label": "GIIE - Gestão Integrada de Inspeção de Elevadores"
+        },
+        {
+          "value": "gesf",
+          "label": "GesF - Gestão da Atividade da Fiscalização"
+        },
+        {
+          "value": "gcm",
+          "label": "GCM - Sistema de Gestão de Cemitérios Municipais"
+        },
+        {
+          "value": "erp_primavera",
+          "label": "ERP Primavera"
+        },
+        {
+          "value": "sgopm",
+          "label": "SGOPM - Sistema de Gestão de Ocupações Municipais"
+        },
+        {
+          "value": "apex",
+          "label": "APEX - Controle de Prazos"
+        },
+        {
+          "value": "acingov",
+          "label": "AcinGov"
+        },
+        {
+          "value": "gesi",
+          "label": "GeSI - Gestão de Sistemas de Informação"
+        },
+        {
+          "value": "gic",
+          "label": "GIC - Gestão Integrada de Contraordenações"
+        },
+        {
+          "value": "sef(airc)",
+          "label": "SEF - Sistema de Execuções Fiscais (Airc)"
+        },
+        {
+          "value": "sef(noronesc)",
+          "label": "SEF - Sistema de Execuções Fiscais (Noronesc)"
+        },
+        {
+          "value": "iportaldoc",
+          "label": "iPortalDoc"
+        },
+        {
+          "value": "weatherlink",
+          "label": "WeatherLink"
+        },
+        {
+          "value": "horizon",
+          "label": "Horizon"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+     ]
+    },    
+    {
+      "field_name": "temporal_coverage",
+      "label": "Cobertura Temporal",
+      "repeating_label": "Cobertura Temporal",
+      "repeating_subfields": [
+        {
+          "field_name": "start_date",
+          "label": "Start Date",
+          "preset": "date"
+        },
+        {
+          "field_name": "end_date",
+          "label": "End Date",
+          "preset": "date"
+	      }
+      ]
+    },
+    {
+      "field_name": "url_documentation",
+      "label": "Documentation",
+      "form_placeholder": "http://example.com/dataset.json",
+      "preset": "multiple_text",
+      "display_property": "foaf:homepage",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "url_page",
+      "label": "Landing Page",
+      "preset": "multiple_text",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "data_structure_description",
+      "label": "Data Structure Description",
+      "preset": "multiple_text",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "is_hvd",
+      "label": "High Value Dataset",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": false,
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Sim"
+        },
+        {
+          "value": "no",
+          "label": "Não"
+        }
+      ]
+    },
+    {
+      "field_name": "is_opendata",
+      "label": "Dados Abertos",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "required": false,
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Sim"
+        },
+        {
+          "value": "no",
+          "label": "Não"
+        }
+      ]
+    },
+    {
+      "field_name": "observations",
+      "label": "Observations",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Comments or annotations about the dataset"
+    },
+    {
+      "field_name": "state_info",
+      "label": "State",
+      "preset": "select",
+      "form_include_blank_choice": false,
+      "required": true,
+      "choices": [
+        {
+          "value": "under_construction",
+          "label": "Under Construction"
+        },
+	      {
+          "value": "existent",
+          "label": "Existent"
+        },
+        {
+          "value": "outdated",
+          "label": "Outdated"
+        }
+      ]
+    },
+    {
+      "field_name": "replace",
+      "label": "Replace",
+      "preset": "dataset_validator"
+    },
+    {
+      "field_name": "replaced_for",
+      "label": "Replaced for",
+      "preset": "dataset_validator"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "name",
+      "label": "Título",
+      "form_placeholder": "eg. January 2011 Gold Prices",
+      "required": true
+    },
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the resource"
+    },
+    {
+      "field_name": "source_url",
+      "label": "Fonte",
+      "form_placeholder": "eg. https://cm-porto.pt/",
+      "display_snippet": null
+    },
+    {
+      "field_name": "reference_date",
+      "label": "Reference Data",
+      "form_placeholder": "eg. Period to which the data refer"
+    },
+    {
+      "field_name": "observations",
+      "label": "Observations",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Write extra information or useful comments"
+    },
+    {
+      "field_name": "restricted",
+      "label": "Restrição de Acessos",
+      "repeating_label": "Nível de Acesso",
+      "repeating_subfields": [
+        {
+          "field_name": "level",
+          "label": "Nível",
+          "preset": "select",
+          "form_include_blank_choice": false,
+          "required": true,
+          "choices": [
+            {
+              "value": "public",
+              "label": "Público"
+            },
+            {
+              "value": "registered",
+              "label": "Utilizadores Registados"
+            },
+            {
+              "value": "any_organization",
+              "label": "Members de Qualquer Organização (Utilizadores Validados)"
+            },
+            {
+              "value": "same_organization",
+              "label": "Apenas Membros da Organização"
+            },
+            {
+              "value": "only_allowed_users",
+              "label": "Apenas Utilizadores Autorizados"
+            }
+          ]
+        },
+        {
+          "field_name": "allowed_users",
+          "label": "Utilizadores Autorizados",
+          "preset": "tag_string_autocomplete",
+          "data-module-source": "/api/2/util/user/autocomplete?q=?"
+        }
+      ]
+    },
+    {
+      "field_name": "language",
+      "label": "Language",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "choices": [
+        {
+          "value": "portuguese",
+          "label": "Portuguese"
+        },
+	      {
+          "value": "english",
+          "label": "English"
+        },
+        {
+          "value": "spanish",
+          "label": "Spanish"
+       	},
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "field_name": "character_encoding",
+      "label": "Character Encoding",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "choices": [
+        {
+          "value": "cyrillic_encoding",
+          "label": "Cyrillic Encoding (Windows)"
+        },
+	      {
+          "value": "western_european_encoding",
+          "label": "Western European Encoding (Windows)"
+        }
+      ]
+    },
+    {
+      "field_name": "resource_type",
+      "label": "Resource Type",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "choices": [
+	      {
+          "value": "database",
+          "label": "Database"
+        },
+        {
+          "value": "api",
+          "label": "API"
+        },
+        {
+          "value": "file",
+          "label": "File"
+        },
+        {
+          "value": "folder",
+          "label": "Folder"
+        },
+        {
+          "value": "data_service",
+          "label": "Data Service"
+        }
+      ]
+    },
+    {
+      "field_name": "db_type",
+      "label": "Database Type",
+      "preset": "select",
+      "form_include_blank_choice": true,
+      "choices": [
+	      {
+          "value": "db_oracle",
+          "label": "SQL ServerOracle DB"
+        },
+        {
+          "value": "db_mysql",
+          "label": "MySQL"
+        },
+        {
+          "value": "db_maria",
+          "label": "MariaDB"
+        },
+        {
+          "value": "db_crate",
+          "label": "CrateDB"
+        },
+        {
+          "value": "db_mongo",
+          "label": "Mongo"
+        },
+        {
+          "value": "db_elastic",
+          "label": "ElasticSearch"
+        },
+        {
+          "value": "db_other",
+          "label": "Outra"
+        }
+      ]
+    },
+    {
+      "field_name": "db_title",
+      "label": "Database Title",
+      "form_placeholder": "eg. my-database"
+    },
+    {
+      "field_name": "db_server",
+      "label": "Database Server"
+    },
+    {
+      "field_name": "db_schema",
+      "label": "Database Schema"
+    },
+    {
+      "field_name": "geodb_feature",
+      "label": "Geographic Database Feature"
+    },
+    {
+      "field_name": "query",
+      "label": "Query",
+      "form_placeholder": "eg. select * from CMP",
+      "form_snippet": null,
+      "display_snippet": null
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete"
+    }
+  ]
+}

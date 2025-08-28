@@ -1,0 +1,73 @@
+<div role="main" class="hero">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                {% block promoted %}
+                {% snippet 'home/snippets/promoted.html' %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                {% block search %}
+                {% snippet 'home/snippets/search.html' %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="group-container">
+                    {% block tagcloud %}
+                    {% snippet 'home/snippets/group_items.html' %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-custom boxes">
+        <div class="row">
+            <div class="col-md-12">
+                {% block stats %}
+                {% snippet 'home/snippets/stats.html' %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% block top_tags %}
+                {% snippet 'home/snippets/most_pop_tags.html', top_tags = h.get_top_tags() %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {% block updates %}
+                <div class="box">
+                    <div class="inner">
+                        <h3>{{ 'Dados atualizados recentemente' }}</h3>
+                        {% snippet 'home/snippets/ordered_datasets.html', packages=h.get_recent_datasets(),
+                        show_update_date=True, list_class = "unstyled dataset-list" %}
+                        <a class="see-all" href="{{datasets_url}}/dataset/?sort=metadata_modified+desc">{{ _('Ver todos') }}...</a>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+            <div class="col-md-6">
+                {% block populars %}
+                <div class="box">
+                    <div class="inner">
+                        <h3>{{ 'Dados mais vistos' }}</h3>
+                        {% snippet 'home/snippets/ordered_datasets.html', packages=h.get_most_pop_datasets(),
+                        show_tracking=True, list_class = "unstyled dataset-list" %}
+                        <a class="see-all" href="{{datasets_url}}/dataset/?sort=views_recent+desc">{{ _('Ver todos') }}...</a>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>

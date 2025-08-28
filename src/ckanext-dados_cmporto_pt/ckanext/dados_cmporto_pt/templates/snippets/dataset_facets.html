@@ -1,0 +1,29 @@
+{% snippet 'snippets/facet_list.html',
+  title=c.facet_titles['organization'],
+  name='organization',
+  scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema('dataset').dataset_fields, 'organization').choices,
+  extras=extras %}
+
+{% snippet 'snippets/facet_list.html',
+  title=c.facet_titles['groups'],
+  name='groups',
+  scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema('dataset').dataset_fields, 'groups').choices,
+  extras=extras %}
+
+{% snippet 'snippets/facet_list.html',
+  title=c.facet_titles['vocab_category'],
+  name='vocab_category',
+  scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema('dataset').dataset_fields, 'vocab_category').choices,
+  extras=extras %}
+  
+{% snippet 'snippets/facet_list.html',
+  title=c.facet_titles['tags'],
+  name='tags',
+  scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema('dataset').dataset_fields, 'tags').choices,
+  extras=extras %}
+
+{% snippet 'snippets/facet_list.html',
+  title=c.facet_titles['res_format'],
+  name='res_format',
+  scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema('dataset').dataset_fields, 'res_format').choices,
+  extras=extras %}

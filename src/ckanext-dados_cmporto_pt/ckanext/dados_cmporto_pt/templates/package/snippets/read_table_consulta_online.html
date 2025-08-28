@@ -1,0 +1,8 @@
+<ul>
+{% for item in value %}
+	{% set the_hiperlink = item.get('hiperlink') %}
+	{% set the_title = item.get('name') or the_hiperlink %}
+	<li><strong><a href="{{ the_hiperlink }}" title="{{ the_hiperlink }}" target="_blank">{{ the_title }} &rarr;</strong></a>
+	</li>
+{% endfor %}
+</ul>
