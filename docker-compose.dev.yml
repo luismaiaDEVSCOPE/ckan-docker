@@ -10,6 +10,7 @@ volumes:
 services:
 
   ckan-dev:
+    container_name: ${CKAN_CONTAINER_NAME}
     build:
       context: ckan/
       dockerfile: Dockerfile.dev
@@ -26,6 +27,7 @@ services:
     volumes:
       - ckan_storage:/var/lib/ckan
       - ./src:/srv/app/src_extensions
+      - ./ckan/scheming:/srv/app/src/ckanext-scheming/scheming
       - pip_cache:/root/.cache/pip
       - site_packages:/usr/local/lib/python3.10/site-packages
       - local_bin:/usr/local/bin
@@ -47,6 +49,7 @@ services:
       retries: 3
 
   db:
+    container_name: ${POSTGRESQL_CONTAINER_NAME}
     build:
       context: postgresql/
     environment:
@@ -66,6 +69,7 @@ services:
       test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
      
   solr:
+    container_name: ${SOLR_CONTAINER_NAME}
     image: ckan/ckan-solr:${SOLR_IMAGE_VERSION}
     volumes:
       - solr_data:/var/solr
@@ -74,6 +78,7 @@ services:
       test: ["CMD", "wget", "-qO", "/dev/null", "http://localhost:8983/solr/"]
 
   redis:
+    container_name: ${REDIS_CONTAINER_NAME}
     image: redis:${REDIS_VERSION}
     restart: unless-stopped
     healthcheck:
