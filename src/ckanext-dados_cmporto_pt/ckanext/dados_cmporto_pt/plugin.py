@@ -13,6 +13,17 @@ import logging
 log = logging.getLogger(__name__)
 
 
+def url_helper(endpoint, **kwargs):
+    """
+    Custom URL helper for backward compatibility with CKAN 2.11
+    Maps old URL patterns to new ones
+    """
+    if endpoint == 'home':
+        return toolkit.h.url_for('home.index')
+    else:
+        return toolkit.h.url_for(endpoint, **kwargs)
+
+
 # @timer(seconds=3600)
 # def update_views_count(signal_number):
 #     """
@@ -52,32 +63,10 @@ class DadosCMPortoPTPlugin(plugins.SingletonPlugin):
                 'get_total_views': get_total_views,
                 'get_total_datasets': get_total_datasets,
                 'get_total_resources' : get_total_resources,
-                'get_all_datasets' : get_all_datasets
+                'get_all_datasets' : get_all_datasets,
+                'url': url_helper
                 }
 
-    # IConfigurer
-    def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
-        toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('public', 'dados_cmporto_pt')
-
-    # IConfigurable
-    def configure(self, config):
-        self.is_dcat_plugin_active = 'dcat' in config.get('ckan.plugins', '')
-
-    # ITemplateHelpers
-    def get_helpers(self):
-        return {'is_dcat_plugin_active': lambda: self.is_dcat_plugin_active,
-                'group_list_all_fields': lambda: toolkit.get_action('group_list')(data_dict={'all_fields': True}),
-                'get_recent_datasets': get_recent_datasets,
-                'get_most_pop_datasets': get_most_pop_datasets,
-                'get_top_tags': get_top_tags,
-                'get_total_tags': get_total_tags,
-                'get_total_views': get_total_views,
-                'get_total_datasets': get_total_datasets,
-                'get_total_resources' : get_total_resources,
-                'get_all_datasets' : get_all_datasets
-                }
 
 def get_recent_datasets():
     try:

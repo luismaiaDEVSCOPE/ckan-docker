@@ -43,7 +43,7 @@
     {
       "preset_name": "users_validator",
       "values": {
-        "validators": "ignore_missing unicode scheming_required",
+        "validators": "ignore_missing unicode_safe scheming_required",
         "form_snippet": "users_select.html",
         "form_attrs": {
           "data-module": "autocomplete"
@@ -160,7 +160,7 @@
       "values":{
         "form_snippet":"radio.html",
         "display_snippet":"select.html",
-        "validators":"scheming_requiredscheming_choices"
+        "validators":"scheming_required scheming_choices"
       }
     }
   ]
