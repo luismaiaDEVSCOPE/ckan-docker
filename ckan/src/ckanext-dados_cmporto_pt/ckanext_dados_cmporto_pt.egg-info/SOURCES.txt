@@ -12,7 +12,6 @@ ckanext/dados_cmporto_pt/public/javascript/main.js
 ckanext/dados_cmporto_pt/public/less/main.less
 ckanext/dados_cmporto_pt/templates/base.html
 ckanext/dados_cmporto_pt/templates/footer.html
-ckanext/dados_cmporto_pt/templates/header.html
 ckanext/dados_cmporto_pt/templates/admin/trash.html
 ckanext/dados_cmporto_pt/templates/admin/snippets/confirm_delete.html
 ckanext/dados_cmporto_pt/templates/admin/snippets/data_type.html
@@ -38,7 +37,6 @@ ckanext/dados_cmporto_pt/templates/package/snippets/read_table_resolucao_espacia
 ckanext/dados_cmporto_pt/templates/package/snippets/resource_form.html
 ckanext/dados_cmporto_pt/templates/package/snippets/resources_list.html
 ckanext/dados_cmporto_pt/templates/snippets/dataset_facets.html
-ckanext/dados_cmporto_pt/templates/snippets/facet_list.html
 ckanext/dados_cmporto_pt/templates/snippets/license.html
 ckanext/dados_cmporto_pt/templates/snippets/package_item.html
 ckanext/dados_cmporto_pt/templates/snippets/package_list.html
